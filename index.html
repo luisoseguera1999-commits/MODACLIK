@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MODACLIK | Ropa y Accesorios de Moda desde Honduras</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4c1d95;        /* Morado profundo elegante */
+      --primary-light: #7c3aed;  /* Morado vibrante */
+      --lilac: #a855f7;          /* Lila */
+      --pink: #db2777;           /* Rosa boutique */
+      --pink-soft: #fdf2f8;      /* Rosa muy suave */
+      --lilac-soft: #f5f3ff;     /* Lila muy suave */
+      --whatsapp: #16a34a;
+      --whatsapp-hover: #15803d;
+      --bg: #fcfaff;
+      --surface: #ffffff;
+      --text-main: #1f1235;
+      --text-muted: #64557a;
+      --border: #eadcf8;
+      --radius: 16px;
+      --shadow-sm: 0 4px 12px rgba(76, 29, 149, 0.06);
+      --shadow-md: 0 12px 28px -6px rgba(124, 58, 237, 0.14);
+      --shadow-lg: 0 22px 44px -10px rgba(76, 29, 149, 0.22);
+      --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-main); background: var(--bg); }
+    body { line-height: 1.6; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    button, input, select, textarea { font-family: inherit; }
+
+    /* NAVBAR */
+    header {
+      position: sticky; top: 0; z-index: 900;
+      background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-container {
+      max-width: 1240px; margin: 0 auto; padding: 0.9rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 0.4rem; text-decoration: none;
+      color: var(--primary); font-weight: 800; font-size: 1.35rem; letter-spacing: -0.02em;
+    }
+    .brand span {
+      background: linear-gradient(135deg, var(--pink), var(--lilac));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
+    .nav-links a:hover { color: var(--pink); }
+    .cart-trigger {
+      position: relative; background: linear-gradient(135deg, var(--primary), var(--pink));
+      color: #fff; border: none; padding: 0.62rem 1.2rem; border-radius: 50px;
+      font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;
+      transition: var(--transition); box-shadow: 0 4px 14px rgba(219, 39, 119, 0.25);
+    }
+    .cart-trigger:hover { transform: translateY(-2px); filter: brightness(1.06); }
+    .cart-badge {
+      background: #fff; color: var(--primary); font-size: 0.75rem; font-weight: 800;
+      padding: 0.1rem 0.5rem; border-radius: 99px;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #3b0764 0%, #6b21a8 52%, #be185d 100%);
+      color: #fff; padding: 5.5rem 1.5rem; position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: ''; position: absolute; right: -8%; top: -15%; width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(244, 114, 182, 0.32) 0%, transparent 70%); pointer-events: none;
+    }
+    .hero-grid {
+      max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem; align-items: center;
+    }
+    .hero-tag {
+      display: inline-block; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #fbcfe8; padding: 0.38rem 1rem; border-radius: 99px; font-size: 0.82rem; font-weight: 700; margin-bottom: 1.2rem;
+    }
+    .hero h1 { font-size: clamp(2.1rem, 4vw, 3.3rem); line-height: 1.14; font-weight: 800; margin-bottom: 1.2rem; }
+    .hero p { color: #f3e8ff; font-size: 1.06rem; margin-bottom: 2rem; max-width: 580px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.85rem 1.6rem; border-radius: 12px; font-weight: 700; font-size: 0.95rem;
+      text-decoration: none; border: none; cursor: pointer; transition: var(--transition);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--pink), var(--primary-light)); color: #fff;
+      box-shadow: 0 6px 18px rgba(219, 39, 119, 0.28);
+    }
+    .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.07); }
+    .btn-whatsapp { background: var(--whatsapp); color: #fff; }
+    .btn-whatsapp:hover { background: var(--whatsapp-hover); transform: translateY(-2px); }
+    .hero-card {
+      background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 22px; padding: 1.4rem; backdrop-filter: blur(10px);
+    }
+    .hero-card img { border-radius: 14px; height: 290px; width: 100%; object-fit: cover; margin-bottom: 1rem; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center; margin-top: 1.5rem; }
+    .hero-stats div strong { display: block; font-size: 1.3rem; color: #f9a8d4; }
+    .hero-stats div span { font-size: 0.8rem; color: #e9d5ff; }
+
+    /* SECCIONES */
+    section { padding: 4.5rem 1.5rem; }
+    .container { max-width: 1240px; margin: 0 auto; }
+    .section-header { text-align: center; max-width: 680px; margin: 0 auto 3rem; }
+    .section-header h2 { font-size: 2.05rem; font-weight: 800; color: var(--primary); margin-bottom: 0.6rem; }
+    .section-header p { color: var(--text-muted); }
+
+    /* BENEFICIOS Y PAGOS */
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .benefit-card {
+      background: var(--surface); padding: 1.8rem; border-radius: var(--radius);
+      border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: var(--transition);
+    }
+    .benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: #d8b4fe; }
+    .benefit-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--pink-soft), var(--lilac-soft));
+      color: var(--pink); display: grid; place-items: center; font-size: 1.45rem; margin-bottom: 1rem;
+    }
+
+    /* FRANJA DE PAGOS EN LÍNEA */
+    .payments-banner {
+      background: linear-gradient(135deg, var(--lilac-soft), var(--pink-soft));
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.5rem 2rem; margin-top: 2.5rem;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .payment-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .pay-pill {
+      background: #fff; border: 1px solid var(--border); padding: 0.45rem 0.9rem;
+      border-radius: 99px; font-size: 0.82rem; font-weight: 700; color: var(--primary);
+    }
+
+    /* FILTROS Y CATÁLOGO */
+    .filters-bar {
+      background: var(--surface); padding: 1.25rem; border-radius: var(--radius);
+      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 1rem; margin-bottom: 2rem;
+    }
+    .filters-bar input, .filters-bar select {
+      width: 100%; padding: 0.72rem 0.9rem; border: 1px solid var(--border);
+      border-radius: 10px; font-size: 0.92rem; background: var(--bg); color: var(--text-main);
+    }
+    .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.85rem; }
+    .product-card {
+      background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+      overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition);
+      display: flex; flex-direction: column;
+    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: #d8b4fe; }
+    .card-img-wrap { position: relative; height: 260px; background: var(--lilac-soft); overflow: hidden; }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .product-card:hover .card-img-wrap img { transform: scale(1.05); }
+    .badges { position: absolute; top: 12px; left: 12px; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .badge {
+      padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.74rem; font-weight: 700;
+      backdrop-filter: blur(6px);
+    }
+    .badge-avail { background: rgba(219, 39, 119, 0.92); color: #fff; }
+    .badge-import { background: rgba(76, 29, 149, 0.88); color: #f3e8ff; }
+    .card-body { padding: 1.35rem; flex: 1; display: flex; flex-direction: column; }
+    .card-meta { font-size: 0.78rem; color: var(--pink); font-weight: 800; margin-bottom: 0.25rem; text-transform: uppercase; }
+    .card-title { font-size: 1.25rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; }
+    .card-specs {
+      display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.83rem; color: var(--text-muted);
+      background: var(--lilac-soft); padding: 0.65rem 0.8rem; border-radius: 10px; margin-bottom: 0.9rem;
+    }
+    .card-price { font-size: 1.45rem; font-weight: 800; color: var(--primary); margin-top: auto; margin-bottom: 1rem; }
+    .card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .btn-sm { padding: 0.65rem 0.85rem; font-size: 0.85rem; border-radius: 10px; }
+    .btn-secondary { background: var(--pink-soft); color: var(--pink); border: 1px solid #fbcfe8; }
+    .btn-secondary:hover { background: #fce7f3; }
+
+    /* QUIENES SOMOS */
+    .about-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .process-steps { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .step-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .step-num {
+      min-width: 34px; height: 34px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--lilac)); color: #fff;
+      display: grid; place-items: center; font-weight: 700; font-size: 0.9rem;
+    }
+    .testimonial-card { background: var(--bg); padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 1rem; }
+
+    /* CONTACTO */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; }
+    .contact-info-box {
+      background: linear-gradient(145deg, #3b0764, #831843); color: #fff; padding: 2.2rem;
+      border-radius: var(--radius); display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .contact-form {
+      background: var(--surface); padding: 2.2rem; border-radius: var(--radius);
+      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+    }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label { display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 10px; background: var(--bg);
+    }
+
+    /* MODAL DETALLE PRODUCTO */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(31, 18, 53, 0.68); backdrop-filter: blur(6px);
+      display: none; align-items: center; justify-content: center; z-index: 1100; padding: 1rem;
+    }
+    .modal-backdrop.active { display: flex; animation: fadeIn 0.25s ease; }
+    .modal-card {
+      background: var(--surface); max-width: 850px; width: 100%; border-radius: 20px;
+      overflow: hidden; box-shadow: var(--shadow-lg); position: relative;
+      display: grid; grid-template-columns: 1.05fr 0.95fr;
+    }
+    .modal-close {
+      position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.92); border: none; font-size: 1.15rem; cursor: pointer; z-index: 10;
+    }
+    .modal-img { width: 100%; height: 100%; min-height: 360px; object-fit: cover; }
+    .modal-content { padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .option-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.4rem; }
+    .opt-pill {
+      padding: 0.35rem 0.75rem; border-radius: 8px; border: 1.5px solid var(--border);
+      background: #fff; font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: 0.2s;
+    }
+    .opt-pill.selected { border-color: var(--pink); background: var(--pink-soft); color: var(--pink); }
+
+    /* DRAWER CARRITO */
+    .cart-drawer {
+      position: fixed; top: 0; right: -440px; width: 100%; max-width: 420px; height: 100vh;
+      background: var(--surface); box-shadow: -10px 0 30px rgba(76, 29, 149, 0.16);
+      z-index: 1200; transition: right 0.32s ease; display: flex; flex-direction: column;
+    }
+    .cart-drawer.open { right: 0; }
+    .cart-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .cart-items { flex: 1; overflow-y: auto; padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; }
+    .cart-item {
+      display: flex; gap: 0.9rem; align-items: center; background: var(--bg);
+      padding: 0.8rem; border-radius: 12px; border: 1px solid var(--border);
+    }
+    .cart-item img { width: 68px; height: 68px; border-radius: 10px; object-fit: cover; }
+    .qty-controls { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.35rem; }
+    .qty-btn { width: 24px; height: 24px; border: 1px solid var(--border); background: #fff; border-radius: 6px; cursor: pointer; }
+    .cart-footer { padding: 1.35rem; border-top: 1px solid var(--border); background: var(--bg); }
+
+    /* CHATBOT FLOTANTE */
+    .chatbot-fab {
+      position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--pink)); color: #fff;
+      border: 2px solid #fbcfe8; box-shadow: var(--shadow-lg);
+      font-size: 1.6rem; cursor: pointer; z-index: 1050; transition: var(--transition);
+    }
+    .chatbot-fab:hover { transform: scale(1.08); }
+    .chatbot-window {
+      position: fixed; bottom: 96px; right: 24px; width: 355px; max-width: calc(100vw - 48px);
+      background: var(--surface); border-radius: 18px; box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border); overflow: hidden; display: none; flex-direction: column; z-index: 1050;
+    }
+    .chatbot-window.open { display: flex; animation: fadeIn 0.25s ease; }
+    .chat-head {
+      background: linear-gradient(135deg, var(--primary), var(--pink)); color: #fff;
+      padding: 1rem 1.2rem; display: flex; justify-content: space-between; align-items: center;
+    }
+    .chat-messages { height: 285px; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; background: var(--bg); }
+    .msg { padding: 0.7rem 0.95rem; border-radius: 12px; font-size: 0.87rem; max-width: 85%; line-height: 1.45; }
+    .msg-bot { background: #fff; border: 1px solid var(--border); align-self: flex-start; }
+    .msg-user { background: linear-gradient(135deg, var(--pink), var(--lilac)); color: #fff; align-self: flex-end; }
+    .quick-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0.6rem 0.8rem; border-top: 1px solid var(--border); background: #fff; }
+    .chip {
+      font-size: 0.74rem; padding: 0.3rem 0.65rem; border-radius: 99px; border: 1px solid var(--border);
+      background: var(--lilac-soft); color: var(--primary); font-weight: 600; cursor: pointer; transition: 0.2s;
+    }
+    .chip:hover { background: var(--pink); color: #fff; border-color: var(--pink); }
+    .chat-input-row { display: flex; border-top: 1px solid var(--border); }
+    .chat-input-row input { flex: 1; border: none; padding: 0.8rem; font-size: 0.88rem; outline: none; }
+    .chat-input-row button { background: var(--primary); color: #fff; border: none; padding: 0 1rem; font-weight: 700; cursor: pointer; }
+
+    /* TOAST */
+    .toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px);
+      background: var(--primary); color: #fff; padding: 0.75rem 1.4rem; border-radius: 99px;
+      font-size: 0.9rem; font-weight: 600; z-index: 1500; transition: transform 0.3s ease;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .contact-grid, .modal-card { grid-template-columns: 1fr; }
+      .filters-bar { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 540px) {
+      .filters-bar { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="#home" class="brand">MODA<span>CLIK</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#nosotros">Quiénes Somos</a></li>
+        <li><a href="#contacto">Contáctanos</a></li>
+      </ul>
+      <button class="cart-trigger" onclick="toggleCart()">
+        🛍️ Carrito <span class="cart-badge" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HOME / HERO -->
+  <section class="hero" id="home">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-tag">✨ Moda Femenina desde Honduras para el Mundo 🌎</span>
+        <h1>Estilo, elegancia y tendencias exclusivas en cada prenda</h1>
+        <p>Descubre nuestra colección oficial de ropa y accesorios seleccionados con tallas verificadas, precios transparentes y atención omnicanal inmediata.</p>
+        <div class="hero-btns">
+          <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
+          <a href="https://wa.me/50493408605?text=Hola%20%F0%9F%98%8A%20Me%20gustar%C3%ADa%20conocer%20las%20prendas%20y%20accesorios%20disponibles%20en%20MODACLIK." target="_blank" rel="noopener" class="btn btn-whatsapp">Asesoría por WhatsApp</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>100%</strong><span>Autoservicio Web</span></div>
+          <div><strong>XS - L</strong><span>Tallas Verificadas</span></div>
+          <div><strong>24/7</strong><span>Tienda Online</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://lh3.googleusercontent.com/d/1mw8QhZA62Ye8kQ2r4oTvYfFZeEICtttf" alt="BOLSA CHIK - Accesorio destacado MODACLIK">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <small style="color:#fbcfe8; font-weight:700;">ACCESORIO DESTACADO</small>
+            <h3 style="font-size:1.15rem;">BOLSA CHIK • Café y Negro</h3>
+          </div>
+          <span style="font-weight:800; font-size:1.2rem; color:#f9a8d4;">L 3,500.00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS Y FORMAS DE PAGO -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Por qué comprar en MODACLIK?</h2>
+        <p>Evolucionamos hacia una experiencia de compra ágil, transparente y sin fricciones desde Honduras hacia mercados internacionales.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">👗</div>
+          <h3>Inventario Sincronizado</h3>
+          <p style="color:var(--text-muted); font-size:0.92rem;">Visualiza exactamente las tallas y colores disponibles antes de confirmar tu pedido.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💳</div>
+          <h3>Pagos Flexibles y Seguros</h3>
+          <p style="color:var(--text-muted); font-size:0.92rem;">Múltiples opciones de pago en línea, tarjetas, transferencias y enlaces de pago protegidos.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">✈️</div>
+          <h3>Envíos Locales y Globales</h3>
+          <p style="color:var(--text-muted); font-size:0.92rem;">Despachos rápidos dentro de Honduras y envíos internacionales con seguimiento continuo.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💬</div>
+          <h3>Experiencia Omnicanal</h3>
+          <p style="color:var(--text-muted); font-size:0.92rem;">Compra directamente desde el catálogo o finaliza tu reserva personalizada vía WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="payments-banner">
+        <div>
+          <strong style="color:var(--primary); font-size:1.05rem; display:block;">🔒 Formas de Pago Disponibles</strong>
+          <small style="color:var(--text-muted);">Transacciones respaldadas y confirmación rápida para tu pedido</small>
+        </div>
+        <div class="payment-pills">
+          <span class="pay-pill">💳 Tarjetas Crédito / Débito</span>
+          <span class="pay-pill">🔗 Link de Pago en Línea</span>
+          <span class="pay-pill">🏦 Transferencia Bancaria</span>
+          <span class="pay-pill">📱 Billeteras Digitales</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO / TIENDA -->
+  <section id="catalogo" style="padding-top:1rem;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Catálogo Oficial MODACLIK</h2>
+        <p>Explora nuestras prendas y accesorios. Selecciona tu talla o color favorito, revisa los detalles en vista ampliada y agrégalos a tu carrito.</p>
+      </div>
+
+      <!-- FILTROS -->
+      <div class="filters-bar">
+        <input type="text" id="searchInput" placeholder="Buscar prenda, vestido, camisa o bolsa..." oninput="renderCatalog()">
+        <select id="brandFilter" onchange="renderCatalog()">
+          <option value="">Todas las marcas</option>
+          <option value="MODACLIK">MODACLIK</option>
+        </select>
+        <select id="expiryFilter" onchange="renderCatalog()">
+          <option value="">Vencimiento / Colección</option>
+          <option value="N/D">Sin vencimiento (N/D)</option>
+        </select>
+        <select id="priceFilter" onchange="renderCatalog()">
+          <option value="">Cualquier precio</option>
+          <option value="1500">Hasta L 1,500.00</option>
+          <option value="3500">Hasta L 3,500.00</option>
+          <option value="9000">Hasta L 9,000.00</option>
+        </select>
+      </div>
+
+      <!-- GRID DE PRODUCTOS -->
+      <div class="catalog-grid" id="catalogGrid"></div>
+    </div>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+  <section class="about-section" id="nosotros">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <span style="color:var(--pink); font-weight:700; font-size:0.9rem;">NUESTRA HISTORIA Y TRANSFORMACIÓN</span>
+          <h2 style="font-size:2rem; font-weight:800; color:var(--primary); margin:0.5rem 0 1rem;">De boutique digital a plataforma omnicanal de moda</h2>
+          <p style="color:var(--text-muted); margin-bottom:1rem;">En <strong>MODACLIK</strong> seleccionamos e importamos prendas y accesorios con altos estándares de calidad para mujeres que buscan destacar en cada ocasión, desde looks casuales hasta vestidos de gala.</p>
+          <div class="process-steps">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div><strong>Selección e Importación Curada</strong><p style="font-size:0.9rem; color:var(--text-muted);">Cada pieza es inspeccionada en acabados, telas y tallaje antes de publicarse.</p></div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div><strong>Transparencia y Control de Stock</strong><p style="font-size:0.9rem; color:var(--text-muted);">Mostramos tallas y colores reales disponibles para una compra sin sorpresas.</p></div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div><strong>Entrega Segura Nacional e Internacional</strong><p style="font-size:0.9rem; color:var(--text-muted);">Empaque boutique protegido y acompañamiento constante hasta que recibes tu pedido.</p></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin-bottom:1rem; color:var(--primary);">Lo que opinan nuestras clientas</h3>
+          <div class="testimonial-card">
+            <p style="font-style:italic; font-size:0.93rem;">"Pedí el Vestido Gala y la Bolsa Chik; la calidad superó mis expectativas y pude ver exactamente las tallas disponibles antes de escribirles."</p>
+            <strong style="display:block; margin-top:0.6rem; font-size:0.85rem; color:var(--pink);">— Valeria C., Tegucigalpa</strong>
+          </div>
+          <div class="testimonial-card">
+            <p style="font-style:italic; font-size:0.93rem;">"Súper fácil armar mi carrito en la página y enviarlo directo a WhatsApp. Atención rápida y envío puntual."</p>
+            <strong style="display:block; margin-top:0.6rem; font-size:0.85rem; color:var(--pink);">— Gabriela M., Compradora Internacional</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTÁCTANOS -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contáctanos</h2>
+        <p>¿Necesitas asesoría de tallas, envíos internacionales o disponibilidad inmediata? Estamos para ayudarte.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info-box">
+          <div>
+            <h3 style="font-size:1.5rem; margin-bottom:0.8rem;">Atención Personalizada</h3>
+            <p style="color:#f3e8ff; margin-bottom:1.5rem;">Nuestro equipo comercial te atiende vía WhatsApp Business para confirmar medidas, métodos de pago en línea y tiempos de entrega.</p>
+            <p style="margin-bottom:0.6rem;">📍 <strong>Origen:</strong> Honduras (Envíos nacionales e internacionales)</p>
+            <p style="margin-bottom:0.6rem;">📱 <strong>WhatsApp Business:</strong> +504 9340-8605</p>
+            <p style="margin-bottom:1.5rem;">🕒 <strong>Horario:</strong> Lunes a Sábado, 8:30 AM - 6:30 PM</p>
+          </div>
+          <a href="https://wa.me/50493408605?text=Hola%20%F0%9F%98%8A%20Vengo%20de%20la%20tienda%20web%20de%20MODACLIK%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa." target="_blank" rel="noopener" class="btn btn-whatsapp" style="width:100%;">
+            Chatear por WhatsApp (+504 9340-8605)
+          </a>
+        </div>
+        <form class="contact-form" onsubmit="handleContactSubmit(event)">
+          <div class="form-group">
+            <label>Nombre completo</label>
+            <input type="text" id="contactName" required placeholder="Ej. Camila Rodríguez">
+          </div>
+          <div class="form-group">
+            <label>País / Ciudad y WhatsApp</label>
+            <input type="text" id="contactPhone" required placeholder="Ej. Honduras / +504 9999-9999">
+          </div>
+          <div class="form-group">
+            <label>Prenda de interés o consulta</label>
+            <textarea id="contactMsg" rows="4" required placeholder="Hola, me gustaría consultar disponibilidad sobre..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Enviar consulta por WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#2e1065; color:#e9d5ff; text-align:center; padding:2rem 1.5rem; font-size:0.9rem;">
+    <p>© 2026 MODACLIK Honduras — Moda femenina y accesorios. Precios expresados en Lempiras (L).</p>
+  </footer>
+
+  <!-- MODAL DE DETALLE DE PRODUCTO -->
+  <div class="modal-backdrop" id="productModal" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <img id="modalImg" class="modal-img" src="" alt="Producto MODACLIK">
+      <div class="modal-content">
+        <div>
+          <span class="badge badge-avail" style="display:inline-block; margin-bottom:0.6rem;">Disponible • Importado</span>
+          <h2 id="modalTitle" style="font-size:1.6rem; font-weight:800; color:var(--primary); margin-bottom:0.2rem;"></h2>
+          <p id="modalCode" style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.7rem;"></p>
+          <div id="modalPrice" style="font-size:1.75rem; font-weight:800; color:var(--pink); margin-bottom:0.9rem;"></div>
+          <p id="modalDesc" style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1rem;"></p>
+          <div style="background:var(--lilac-soft); padding:0.9rem; border-radius:12px; border:1px solid var(--border); font-size:0.88rem;">
+            <div><strong>Marca:</strong> <span id="modalBrand"></span></div>
+            <div><strong>Categoría:</strong> <span id="modalCat"></span></div>
+            <div><strong>Vencimiento:</strong> <span id="modalExpiry"></span></div>
+            <div style="margin-top:0.5rem;"><strong>Tallas disponibles:</strong> <div class="option-pills" id="modalSizes"></div></div>
+            <div style="margin-top:0.5rem;"><strong>Colores disponibles:</strong> <div class="option-pills" id="modalColors"></div></div>
+          </div>
+        </div>
+        <div style="display:grid; gap:0.6rem; margin-top:1.4rem;">
+          <button class="btn btn-primary" id="modalAddBtn">Agregar al carrito</button>
+          <a id="modalWaBtn" href="#" target="_blank" rel="noopener" class="btn btn-whatsapp">Cotizar esta prenda por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARRITO LATERAL (DRAWER) -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 style="font-weight:800; color:var(--primary);">Tu Bolsa MODACLIK</h3>
+      <button onclick="toggleCart()" style="background:none; border:none; font-size:1.3rem; cursor:pointer;">✕</button>
+    </div>
+    <div class="cart-items" id="cartItemsContainer"></div>
+    <div class="cart-footer">
+      <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem; font-size:0.92rem; color:var(--text-muted);">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal">L 0.00</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; margin-bottom:1rem; font-size:1.2rem; font-weight:800;">
+        <span>Total Referencial:</span>
+        <span id="cartTotal" style="color:var(--pink);">L 0.00</span>
+      </div>
+      <button onclick="checkoutWhatsApp()" class="btn btn-whatsapp" style="width:100%;">
+        Finalizar pedido por WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- CHATBOT FLOTANTE -->
+  <button class="chatbot-fab" onclick="toggleChat()" title="Asistente Virtual MODACLIK">💖</button>
+  <div class="chatbot-window" id="chatWindow">
+    <div class="chat-head">
+      <div style="display:flex; align-items:center; gap:0.6rem;">
+        <span style="font-size:1.4rem;">✨</span>
+        <div>
+          <strong style="display:block; font-size:0.95rem;">Asistente MODACLIK</strong>
+          <small style="font-size:0.75rem; opacity:0.9;">En línea • Asesoría de Moda</small>
+        </div>
+      </div>
+      <button onclick="toggleChat()" style="background:none; border:none; color:#fff; font-size:1.1rem; cursor:pointer;">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg msg-bot">¡Hola! 👋 Bienvenida a <strong>MODACLIK</strong>. ¿En qué puedo ayudarte hoy? Elige una consulta rápida o escribe tu pregunta.</div>
+    </div>
+    <div class="quick-chips">
+      <span class="chip" onclick="sendQuickReply('Horarios')">🕒 Horarios</span>
+      <span class="chip" onclick="sendQuickReply('Envío de productos')">✈️ Envío de productos</span>
+      <span class="chip" onclick="sendQuickReply('Precio')">💰 Precio</span>
+      <span class="chip" onclick="sendQuickReply('Entregas')">🚚 Entregas</span>
+      <span class="chip" onclick="sendQuickReply('Productos')">👗 Productos</span>
+      <span class="chip" onclick="sendQuickReply('Contacto')">📞 Contacto</span>
+      <span class="chip" onclick="sendQuickReply('Soporte técnico')">🛠️ Soporte técnico</span>
+      <span class="chip" onclick="sendQuickReply('Seguimiento de pedidos')">📦 Seguimiento</span>
+    </div>
+    <form class="chat-input-row" onsubmit="handleChatSubmit(event)">
+      <input type="text" id="chatInput" placeholder="Escribe tu pregunta...">
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // DATASET OFICIAL DEL CATÁLOGO MODACLIK (Sin inventar datos; campos faltantes en "N/D")
+    const products = [
+      {
+        id: "MCK-001",
+        nombre: "BOLSA CHIK",
+        categoria: "Accesorios",
+        marca: "MODACLIK",
+        precio: 3500.00,
+        colores: ["Café", "Negro"],
+        tallas: ["N/D"],
+        vencimiento: "N/D",
+        foto: "https://lh3.googleusercontent.com/d/1mw8QhZA62Ye8kQ2r4oTvYfFZeEICtttf",
+        estado: "Disponible",
+        origen: "Importado",
+        descripcion: "BOLSA CHIK de marca MODACLIK disponible en colores Café y Negro. Accesorio elegante para complementar tu estilo."
+      },
+      {
+        id: "MCK-002",
+        nombre: "CAMISA",
+        categoria: "Ropa / Blusas y Camisas",
+        marca: "MODACLIK",
+        precio: 800.00,
+        colores: ["N/D"],
+        tallas: ["S", "M", "L"],
+        vencimiento: "N/D",
+        foto: "https://lh3.googleusercontent.com/d/1XbLDj1QxTqGB_W3HqBupbyhmZ_uJCs2D",
+        estado: "Disponible",
+        origen: "Importado",
+        descripcion: "CAMISA de marca MODACLIK disponible en tallas S, M y L. Versátil, cómoda y lista para envío."
+      },
+      {
+        id: "MCK-003",
+        nombre: "CASUAL",
+        categoria: "Ropa / Casual",
+        marca: "MODACLIK",
+        precio: 1500.00,
+        colores: ["N/D"],
+        tallas: ["XS", "S", "M", "L"],
+        vencimiento: "N/D",
+        foto: "https://lh3.googleusercontent.com/d/16HloWf-JJRGg70mpVtZehfySTt2XsYco",
+        estado: "Disponible",
+        origen: "Importado",
+        descripcion: "Prenda CASUAL de marca MODACLIK disponible en tallas XS, S, M y L. Ideal para un look moderno de diario."
+      },
+      {
+        id: "MCK-004",
+        nombre: "MODA LATINS",
+        categoria: "Ropa / Moda",
+        marca: "MODACLIK",
+        precio: 2800.00,
+        colores: ["N/D"],
+        tallas: ["S", "M"],
+        vencimiento: "N/D",
+        foto: "https://lh3.googleusercontent.com/d/10ntGXOZXWpjJqle0-Fjpl_WJXf_RBreK",
+        estado: "Disponible",
+        origen: "Importado",
+        descripcion: "MODA LATINS de marca MODACLIK disponible en tallas S y M. Diseño femenino con acabado de boutique."
+      },
+      {
+        id: "MCK-005",
+        nombre: "VESTIDO GALA",
+        categoria: "Ropa / Vestidos de Gala",
+        marca: "MODACLIK",
+        precio: 5499.90,
+        colores: ["N/D"],
+        tallas: ["XS", "M", "L"],
+        vencimiento: "N/D",
+        foto: "https://lh3.googleusercontent.com/d/1_MbKLlYqlfBY93o2LwbdLQ2h5TgBz2dd",
+        estado: "Disponible",
+        origen: "Importado",
+        descripcion: "VESTIDO GALA de marca MODACLIK disponible en tallas XS, M y L. Elegancia pensada para eventos especiales."
+      },
+      {
+        id: "MCK-006",
+        nombre: "VESTIDO MODA",
+        categoria: "Ropa / Vestidos",
+        marca: "MODACLIK",
+        precio: 8999.99,
+        colores: ["N/D"],
+        tallas: ["XS", "S", "M", "L"],
+        vencimiento: "N/D",
+        foto: "https://lh3.googleusercontent.com/d/1YMmOsLN42vlagrULZbwNTXkIWHgBClq1",
+        estado: "Disponible",
+        origen: "Importado",
+        descripcion: "VESTIDO MODA de marca MODACLIK disponible en tallas XS, S, M y L. Pieza exclusiva de alta colección."
+      }
+    ];
+
+    const WHATSAPP_NUMBER = "50493408605";
+    let cart = JSON.parse(localStorage.getItem("modaclik_cart")) || [];
+    let selectedSize = "N/D";
+    let selectedColor = "N/D";
+
+    // FORMATEADOR DE LEMPIRAS CON SEPARADORES Y 2 DECIMALES
+    function formatLps(amount) {
+      return "L " + Number(amount).toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    // RENDERIZAR CATÁLOGO
+    function renderCatalog() {
+      const search = document.getElementById("searchInput").value.toLowerCase();
+      const brand = document.getElementById("brandFilter").value;
+      const expiry = document.getElementById("expiryFilter").value;
+      const maxPrice = Number(document.getElementById("priceFilter").value);
+
+      const grid = document.getElementById("catalogGrid");
+      const filtered = products.filter(p => {
+        const matchSearch = `${p.nombre} ${p.marca} ${p.tallas.join(" ")} ${p.colores.join(" ")}`.toLowerCase().includes(search);
+        const matchBrand = !brand || p.marca === brand;
+        const matchExpiry = !expiry || p.vencimiento === expiry;
+        const matchPrice = !maxPrice || p.precio <= maxPrice;
+        return matchSearch && matchBrand && matchExpiry && matchPrice;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--text-muted);">No se encontraron prendas o accesorios con esos filtros.</p>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => `
+        <article class="product-card">
+          <div class="card-img-wrap">
+            <img src="${p.foto}" alt="${p.nombre} - ${p.marca}" loading="lazy">
+            <div class="badges">
+              <span class="badge badge-avail">${p.estado}</span>
+              <span class="badge badge-import">${p.origen}</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">${p.marca} • ID: ${p.id}</div>
+            <h3 class="card-title">${p.nombre}</h3>
+            <div class="card-specs">
+              <span>📏 <strong>Tallas:</strong> ${p.tallas.join(", ")}</span>
+              <span>🎨 <strong>Colores:</strong> ${p.colores.join(", ")}</span>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">${p.descripcion}</p>
+            <div class="card-price">${formatLps(p.precio)}</div>
+            <div class="card-actions">
+              <button class="btn btn-secondary btn-sm" onclick="openModal('${p.id}')">Ver detalles</button>
+              <button class="btn btn-primary btn-sm" onclick="quickAdd('${p.id}')">+ Agregar</button>
+            </div>
+            <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola 😊 Me interesa cotizar ${p.nombre} (${p.marca}) con precio ${formatLps(p.precio)} que vi en su web. ¿Me confirmas disponibilidad?`)}"
+               target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm" style="margin-top:0.5rem; width:100%;">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    // MODAL DETALLES CON SELECTOR DE TALLA/COLOR
+    function openModal(id) {
+      const p = products.find(item => item.id === id);
+      if (!p) return;
+
+      selectedSize = p.tallas[0];
+      selectedColor = p.colores[0];
+
+      document.getElementById("modalImg").src = p.foto;
+      document.getElementById("modalTitle").textContent = p.nombre;
+      document.getElementById("modalCode").textContent = `Código de producto: ${p.id}`;
+      document.getElementById("modalPrice").textContent = formatLps(p.precio);
+      document.getElementById("modalDesc").textContent = p.descripcion;
+      document.getElementById("modalBrand").textContent = p.marca;
+      document.getElementById("modalCat").textContent = p.categoria;
+      document.getElementById("modalExpiry").textContent = p.vencimiento;
+
+      document.getElementById("modalSizes").innerHTML = p.tallas.map((t, idx) =>
+        `<button type="button" class="opt-pill ${idx === 0 ? 'selected' : ''}" onclick="selectOption(this, 'size', '${t}')">${t}</button>`
+      ).join("");
+
+      document.getElementById("modalColors").innerHTML = p.colores.map((c, idx) =>
+        `<button type="button" class="opt-pill ${idx === 0 ? 'selected' : ''}" onclick="selectOption(this, 'color', '${c}')">${c}</button>`
+      ).join("");
+
+      document.getElementById("modalAddBtn").onclick = () => {
+        addToCart(p.id, selectedSize, selectedColor);
+        closeModal();
+      };
+
+      const waMsg = `Hola 😊 Me interesa cotizar *${p.nombre}* (${p.marca}) [ID: ${p.id}] publicado en ${formatLps(p.precio)}. ¿Me confirmas disponibilidad y próximos pasos?`;
+      document.getElementById("modalWaBtn").href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMsg)}`;
+
+      document.getElementById("productModal").classList.add("active");
+    }
+
+    function selectOption(btn, type, value) {
+      btn.parentElement.querySelectorAll(".opt-pill").forEach(el => el.classList.remove("selected"));
+      btn.classList.add("selected");
+      if (type === "size") selectedSize = value;
+      if (type === "color") selectedColor = value;
+    }
+
+    function closeModal() {
+      document.getElementById("productModal").classList.remove("active");
+    }
+    function closeModalOnBackdrop(e) {
+      if (e.target.id === "productModal") closeModal();
+    }
+
+    // CARRITO DE COMPRAS
+    function saveCart() {
+      localStorage.setItem("modaclik_cart", JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    function quickAdd(id) {
+      const p = products.find(item => item.id === id);
+      if (!p) return;
+      addToCart(p.id, p.tallas[0], p.colores[0]);
+    }
+
+    function addToCart(id, size, color) {
+      const key = `${id}_${size}_${color}`;
+      const existing = cart.find(item => item.key === key);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ key, id, size, color, qty: 1 });
+      }
+      saveCart();
+      showToast("Producto agregado a tu bolsa");
+    }
+
+    function changeQty(key, delta) {
+      const item = cart.find(i => i.key === key);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.key !== key);
+      }
+      saveCart();
+    }
+
+    function removeFromCart(key) {
+      cart = cart.filter(i => i.key !== key);
+      saveCart();
+    }
+
+    function updateCartUI() {
+      const count = cart.reduce((acc, item) => acc + item.qty, 0);
+      document.getElementById("cartCount").textContent = count;
+
+      const container = document.getElementById("cartItemsContainer");
+      if (cart.length === 0) {
+        container.innerHTML = `<p style="text-align:center; color:var(--text-muted); margin-top:2rem;">Tu bolsa está vacía.<br>Agrega prendas o accesorios del catálogo para cotizar.</p>`;
+        document.getElementById("cartSubtotal").textContent = "L 0.00";
+        document.getElementById("cartTotal").textContent = "L 0.00";
+        return;
+      }
+
+      let total = 0;
+      container.innerHTML = cart.map(item => {
+        const p = products.find(prod => prod.id === item.id);
+        if (!p) return "";
+        const itemTotal = p.precio * item.qty;
+        total += itemTotal;
+        return `
+          <div class="cart-item">
+            <img src="${p.foto}" alt="${p.nombre}">
+            <div style="flex:1;">
+              <strong style="font-size:0.95rem; display:block; color:var(--primary);">${p.nombre}</strong>
+              <small style="display:block; color:var(--text-muted); font-size:0.78rem;">Talla: ${item.size} | Color: ${item.color}</small>
+              <small style="color:var(--pink); font-weight:700;">${formatLps(p.precio)} c/u</small>
+              <div class="qty-controls">
+                <button class="qty-btn" onclick="changeQty('${item.key}', -1)">-</button>
+                <span style="font-size:0.85rem; font-weight:700;">${item.qty}</span>
+                <button class="qty-btn" onclick="changeQty('${item.key}', 1)">+</button>
+                <button onclick="removeFromCart('${item.key}')" style="margin-left:auto; background:none; border:none; color:#e11d48; font-size:0.8rem; cursor:pointer;">Eliminar</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      document.getElementById("cartSubtotal").textContent = formatLps(total);
+      document.getElementById("cartTotal").textContent = formatLps(total);
+    }
+
+    function toggleCart() {
+      document.getElementById("cartDrawer").classList.toggle("open");
+    }
+
+    // FINALIZAR PEDIDO POR WHATSAPP (+50493408605)
+    function checkoutWhatsApp() {
+      if (cart.length === 0) {
+        showToast("Agrega al menos un producto antes de finalizar");
+        return;
+      }
+
+      let total = 0;
+      const lines = cart.map((item, idx) => {
+        const p = products.find(prod => prod.id === item.id);
+        const subtotal = p.precio * item.qty;
+        total += subtotal;
+        return `${idx + 1}. *${p.nombre}* (${p.marca}) - Talla: ${item.size} - Color: ${item.color} - Vence: ${p.vencimiento} [ID: ${p.id}] - Cant: ${item.qty} - Subtotal: ${formatLps(subtotal)}`;
+      });
+
+      const message =
+        `Hola 😊 Me interesa cotizar y conocer disponibilidad de estos productos que vi en su web:\n\n` +
+        `${lines.join("\n")}\n\n` +
+        `*Total referencial:* ${formatLps(total)}\n\n` +
+        `¿Me confirmas disponibilidad y próximos pasos? Me encantaría coordinar una llamada o visita para finalizar mi compra.`;
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener");
+    }
+
+    // FORMULARIO DE CONTACTO
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("contactName").value;
+      const phone = document.getElementById("contactPhone").value;
+      const msg = document.getElementById("contactMsg").value;
+      const text = `Hola 😊 Soy *${name}* (${phone}). Consulta desde la tienda web de MODACLIK:\n\n"${msg}"`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+    }
+
+    // CHATBOT INTELIGENTE
+    function toggleChat() {
+      document.getElementById("chatWindow").classList.toggle("open");
+    }
+
+    function getBotResponse(input) {
+      const q = input.toLowerCase();
+      if (q.includes("horario")) return "🕒 Atendemos de Lunes a Sábado de 8:30 AM a 6:30 PM (Hora de Honduras). Nuestra tienda web está abierta 24/7.";
+      if (q.includes("envio") || q.includes("envío") || q.includes("internacional")) return "✈️ Realizamos envíos a todo Honduras y despachos internacionales con tarifas preferenciales según destino.";
+      if (q.includes("precio") || q.includes("costo") || q.includes("vale")) return "💰 Nuestros precios van desde L 800.00 (Camisa) hasta L 8,999.99 (Vestido Moda), todos mostrados en Lempiras.";
+      if (q.includes("entrega")) return "🚚 Entregas locales rápidas en 24-48 horas y envíos internacionales coordinados directamente contigo tras confirmar tu pedido.";
+      if (q.includes("producto") || q.includes("catalogo") || q.includes("vestido") || q.includes("bolsa")) return "👗 Contamos con BOLSA CHIK, CAMISA, CASUAL, MODA LATINS, VESTIDO GALA y VESTIDO MODA de marca MODACLIK.";
+      if (q.includes("contacto") || q.includes("whatsapp") || q.includes("telefono")) return "📞 Escríbenos directamente a nuestro WhatsApp Business: +504 9340-8605.";
+      if (q.includes("soporte") || q.includes("talla")) return "🛠️ Si necesitas confirmar medidas exactas o ayuda con tu compra en línea, nuestro equipo te asesora al instante en el +504 9340-8605.";
+      if (q.includes("seguimiento") || q.includes("pedido")) return "📦 Al confirmar tu pedido te compartimos el estado en cada etapa: Confirmado → En preparación → En ruta.";
+      return "Gracias por contactar a MODACLIK 💖 Para asesoría personalizada de tallas, pagos en línea o envíos, escríbenos al WhatsApp +504 9340-8605.";
+    }
+
+    function appendChatMessage(text, isUser = false) {
+      const box = document.getElementById("chatMessages");
+      const div = document.createElement("div");
+      div.className = `msg ${isUser ? "msg-user" : "msg-bot"}`;
+      div.textContent = text;
+      box.appendChild(div);
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function sendQuickReply(topic) {
+      appendChatMessage(topic, true);
+      setTimeout(() => appendChatMessage(getBotResponse(topic), false), 350);
+    }
+
+    function handleChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById("chatInput");
+      const text = input.value.trim();
+      if (!text) return;
+      appendChatMessage(text, true);
+      input.value = "";
+      setTimeout(() => appendChatMessage(getBotResponse(text), false), 400);
+    }
+
+    function showToast(text) {
+      const t = document.getElementById("toast");
+      t.textContent = text;
+      t.classList.add("show");
+      setTimeout(() => t.classList.remove("show"), 2600);
+    }
+
+    // INICIALIZACIÓN
+    renderCatalog();
+    updateCartUI();
+  </script>
+</body>
+</html>
